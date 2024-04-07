@@ -1,0 +1,110 @@
+* {
+  /* basic reset for whitespaces */
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: #EAE0D5;
+}
+
+body {
+  width: 358px;
+  padding: 0.8rem;
+  border: 2px solid #C6AC8F;
+  border-radius: 5px;
+  background-color: #0F161A;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+button {
+  background-color: #22333B;
+  border: 2px solid #22333B;
+  cursor: pointer
+}
+
+button:hover {
+  background-color: #C6AC8F;
+  border: 2px solid #C6AC8F;
+  color: #5E503F;
+}
+
+input {
+  padding: 0.6rem;
+  text-indent: 0.2rem;
+  background-color: #EAE0D5;
+  border-radius: 0.5rem;
+  color: #5E503F;
+}
+
+input:focus-visible {
+  outline: none;
+  border: 2px solid #C6AC8F;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.font-lorem {
+  font-weight: 500;
+  font-style: italic;
+  white-space: pre;
+}
+
+.generator-wrapper {
+  margin: 1rem 0 0 0;
+}
+
+.option-wrapper-full {
+  padding: 0.4rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.option-wrapper {
+  padding: 0.4rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.input-wrapper {
+  width: 10rem;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  background-color: #22333B;
+  border: 2px solid #22333B;
+  cursor: pointer
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 0.5rem;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0.5rem;
+}
+
+.warning {
+  color: #BC7272;
+  font-weight: 600;
+  font-style: italic;
+}
