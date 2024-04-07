@@ -91,7 +91,6 @@ const convertBase = (str, base) => {
       break;
     default:
       str = "";
-
   }
 
   // set default result
@@ -142,10 +141,10 @@ submitBin.addEventListener("click", () => {
 })
 
 submitDec.addEventListener("click", () => {
-  convertBase(numBin.value, '10')
+  convertBase(numDec.value, '10')
 })
 
 submitHex.addEventListener("click", () => {
-  convertBase(numBin.value, '16')
+  convertBase(numHex.value, '16')
 })
 
