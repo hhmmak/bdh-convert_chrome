@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Binary Conversion",
+  "version": "1.0.0",
+  "description": "Binary, Decimal and Hexadecimal number base conversion",
+  "icons": {
+    "16": "images/icon-48.png",
+    "32": "images/icon-48.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
