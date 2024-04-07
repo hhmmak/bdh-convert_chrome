@@ -67,7 +67,7 @@ const formatDec = (dec) => {
 }
 
 const formatHex = (hex) => {
-  return hex.replace(/\B(?=(\d{2})+(?!\d))/g, " ").toUpperCase();
+  return hex.replace(/\B(?=([0-9A-Za-z]{2})+(?![0-9A-Za-z]))/g, " ").toUpperCase();
 }
 
 
