@@ -13,6 +13,7 @@ const numHex = document.getElementById('numHex')
 const numComp = document.getElementById('numComp')
 const numCompHex = document.getElementById('numCompHex')
 const numSignDec = document.getElementById('numSignDec')
+const errorMsg = document.getElementById('errorMsg')
 
 // button
 const submitBin = document.getElementById('submitBin')
@@ -71,9 +72,6 @@ const formatHex = (hex) => {
 }
 
 
-//.. error warning
-
-
 //.. main function
 
 const convertBase = (str, base) => {
@@ -82,12 +80,25 @@ const convertBase = (str, base) => {
   switch(base){
     case '2':
       str = str.replace(/[^01]/g, "");
+      if (str.length > 48){
+        str = ""
+        errorMsg.innerText = "Exceed range for calculation"
+      }
       break;
-    case '10':
-      str = str.replace(/\D/g, "");
+      case '10':
+        str = str.replace(/\D/g, "");
+        if (parseInt(str) > 281474976710655){
+          str = ""
+          errorMsg.innerText = "Exceed range for calculation"
+        }
       break;
     case '16':
       str.replace(/[^0-9A-Fa-f]/g, "")
+      str.toUpperCase()
+      if (str.length > 12){
+        str = ""
+        errorMsg.innerText = "Exceed range for calculation"
+      }
       break;
     default:
       str = "";
@@ -107,6 +118,7 @@ const convertBase = (str, base) => {
   if (str.length > 0) {
 
     const numClean = parseInt(str, base);
+    console.log(str, base, numClean)
 
     // convert number base
     result.bin = numClean.toString(2);
@@ -137,14 +149,17 @@ const convertBase = (str, base) => {
 //.. button event listeners
 
 submitBin.addEventListener("click", () => {
+  errorMsg.innerText = ''
   convertBase(numBin.value, '2')
 })
 
 submitDec.addEventListener("click", () => {
+  errorMsg.innerText = ''
   convertBase(numDec.value, '10')
 })
 
 submitHex.addEventListener("click", () => {
+  errorMsg.innerText = ''
   convertBase(numHex.value, '16')
 })
 
