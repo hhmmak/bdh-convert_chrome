@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Binary Conversion",
+  "name": "BHD Base Conversion",
   "version": "1.0.0",
   "description": "Binary, Decimal and Hexadecimal number base conversion",
   "icons": {
