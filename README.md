@@ -1,5 +1,7 @@
 # bdh-calculator
-Binary-to-decimal-to-hexidecimal converter/calculator
+Binary-to-decimal-to-hexidecimal converter
+
+![Screenshot 2024-04-13 at 13 58 35](https://github.com/hhmmak/bdh-convert_chrome/assets/100734684/d2aeda01-f8e1-44d5-a8e9-361c61afdd46)
 
 ## Color Palette
 
