@@ -33,7 +33,6 @@ const calcTwosComp = (bin) => {
   }
 
   compArr = compArr.map(digit => digit === '1' ? '0' : '1');
-  console.log(compArr)
 
   let idx = 0;
 
@@ -50,9 +49,7 @@ const calcTwosComp = (bin) => {
       compArr[idx] = '1'
     }
   }
-  console.log(compArr)
   const compNum = compArr.reverse().join('');
-  console.log(compNum)
 
   return compNum === bin? '1111' + compNum : compNum;
 }
@@ -76,7 +73,6 @@ const formatHex = (hex) => {
 
 const convertBase = (str, base) => {
 
-  console.log(str, base)
   // clean input
   switch(base){
     case '2':
@@ -87,19 +83,15 @@ const convertBase = (str, base) => {
       }
       break;
       case '10':
-      console.log(str, base)
 
         str = str.replace(/\D/g, "");
-        console.log(str, base)
         if (parseInt(str) > 281474976710655){
           str = ""
           errorMsg.innerText = "Exceed range for calculation"
         }
       break;
     case '16':
-      console.log(str, base)
       str = str.replace(/[^0-9A-Fa-f]/g, "")
-      console.log(str, base)
       str.toUpperCase()
       if (str.length > 12){
         str = ""
@@ -154,7 +146,6 @@ const convertBase = (str, base) => {
 //.. button event listeners
 
 submitBtn.addEventListener("click", () => {
-  console.log(activeInput, activeBase)
   errorMsg.innerText = ''
   convertBase(activeInput.value, activeBase)
 })
@@ -167,7 +158,6 @@ numBin.addEventListener("focus", () => {
 numHex.addEventListener("focus", () => {
   activeInput = numHex
   activeBase = '16'
-  console.log(numHex.value)
 })
 
 numDec.addEventListener("focus", () => {
