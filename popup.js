@@ -98,7 +98,7 @@ const convertBase = (str, base) => {
       break;
     case '16':
       console.log(str, base)
-      str.replace(/[^0-9A-Fa-f]/g, "")
+      str = str.replace(/[^0-9A-Fa-f]/g, "")
       console.log(str, base)
       str.toUpperCase()
       if (str.length > 12){
