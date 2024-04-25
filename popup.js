@@ -1,6 +1,8 @@
 
-//.. constants
+//.. global variable
 
+let activeInput = document.getElementById('numDec')
+let activeBase = 10
 
 //.. DOM elements
 
@@ -16,9 +18,7 @@ const numSignDec = document.getElementById('numSignDec')
 const errorMsg = document.getElementById('errorMsg')
 
 // button
-const submitBin = document.getElementById('submitBin')
-const submitDec = document.getElementById('submitDec')
-const submitHex = document.getElementById('submitHex')
+const submitBtn = document.getElementById('submitBtn')
 
 //.. helper functions
 
@@ -76,6 +76,7 @@ const formatHex = (hex) => {
 
 const convertBase = (str, base) => {
 
+  console.log(str, base)
   // clean input
   switch(base){
     case '2':
@@ -86,14 +87,19 @@ const convertBase = (str, base) => {
       }
       break;
       case '10':
+      console.log(str, base)
+
         str = str.replace(/\D/g, "");
+        console.log(str, base)
         if (parseInt(str) > 281474976710655){
           str = ""
           errorMsg.innerText = "Exceed range for calculation"
         }
       break;
     case '16':
+      console.log(str, base)
       str.replace(/[^0-9A-Fa-f]/g, "")
+      console.log(str, base)
       str.toUpperCase()
       if (str.length > 12){
         str = ""
@@ -118,7 +124,6 @@ const convertBase = (str, base) => {
   if (str.length > 0) {
 
     const numClean = parseInt(str, base);
-    console.log(str, base, numClean)
 
     // convert number base
     result.bin = numClean.toString(2);
@@ -148,18 +153,24 @@ const convertBase = (str, base) => {
 
 //.. button event listeners
 
-submitBin.addEventListener("click", () => {
+submitBtn.addEventListener("click", () => {
+  console.log(activeInput, activeBase)
   errorMsg.innerText = ''
-  convertBase(numBin.value, '2')
+  convertBase(activeInput.value, activeBase)
 })
 
-submitDec.addEventListener("click", () => {
-  errorMsg.innerText = ''
-  convertBase(numDec.value, '10')
+numBin.addEventListener("focus", () => {
+  activeInput = numBin
+  activeBase = '2'
 })
 
-submitHex.addEventListener("click", () => {
-  errorMsg.innerText = ''
-  convertBase(numHex.value, '16')
+numHex.addEventListener("focus", () => {
+  activeInput = numHex
+  activeBase = '16'
+  console.log(numHex.value)
 })
 
+numDec.addEventListener("focus", () => {
+  activeInput = numDec
+  activeBase = '10'
+})
